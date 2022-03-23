@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>HTML Video Player</title>
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<div class="player">
+			<video class="player__video viewer" src="652333414.mp4"></video>
+
+			<div class="player__controls">
+				<div class="progress">
+					<div class="progress__filled"></div>
+				</div>
+				<button class="player__button toggle" title="Toggle Play">
+					►
+				</button>
+
+				<input
+					type="range"
+					name="volume"
+					class="player__slider"
+					min="0"
+					max="1"
+					step="0.05"
+					value="1"
+					title="Volume"
+				/>
+				<input
+					type="range"
+					name="playbackRate"
+					class="player__slider"
+					min="0.5"
+					max="2"
+					step="0.1"
+					value="1"
+					title="Playback Speed"
+				/>
+				<button
+					data-skip="-10"
+					class="player__button"
+					title="Rewind 10 Seconds"
+				>
+					« 10s
+				</button>
+				<button
+					data-skip="25"
+					class="player__button"
+					title="Fast Forward 25 Seconds"
+				>
+					25s »
+				</button>
+				<button
+					class="fullscreen-button player__button"
+					id="fullscreen-button"
+					title="Full screen"
+				>
+					<svg>
+						<use href="#fullscreen"></use>
+						<use href="#fullscreen-exit" class="hidden"></use>
+					</svg>
+				</button>
+			</div>
+		</div>
+
+		<svg style="display: none">
+			<defs>
+				<symbol id="fullscreen" viewBox="0 0 24 24">
+					<path
+						d="M14.016 5.016h4.969v4.969h-1.969v-3h-3v-1.969zM17.016 17.016v-3h1.969v4.969h-4.969v-1.969h3zM5.016 9.984v-4.969h4.969v1.969h-3v3h-1.969zM6.984 14.016v3h3v1.969h-4.969v-4.969h1.969z"
+					></path>
+				</symbol>
+
+				<symbol id="fullscreen-exit" viewBox="0 0 24 24">
+					<path
+						d="M15.984 8.016h3v1.969h-4.969v-4.969h1.969v3zM14.016 18.984v-4.969h4.969v1.969h-3v3h-1.969zM8.016 8.016v-3h1.969v4.969h-4.969v-1.969h3zM5.016 15.984v-1.969h4.969v4.969h-1.969v-3h-3z"
+					></path>
+				</symbol>
+			</defs>
+		</svg>
+
+		<script src="index.js"></script>
+	</body>
+</html>
